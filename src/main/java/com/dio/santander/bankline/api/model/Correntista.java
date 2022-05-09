@@ -5,12 +5,13 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tab_correntista")
 public class Correntista {
-	@id
+	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
@@ -21,7 +22,7 @@ public class Correntista {
 	@Column(length = 60)
 	private String nome;
 
-	@Embe
+	@Embedded
 	private Conta conta;
 	
 	public Conta getConta() {
